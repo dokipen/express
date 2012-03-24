@@ -3,7 +3,7 @@ var express = require('../')
 
 describe('req', function(){
   describe('.accepts(type)', function(){
-    it('should return the type when Accept is not present', function(done){
+    it('should return true when Accept is not present', function(done){
       var app = express();
 
       app.use(function(req, res, next){
@@ -15,7 +15,7 @@ describe('req', function(){
       .expect('yes', done);
     })
 
-    it('should return the type when it is present', function(done){
+    it('should return true when it is present', function(done){
       var app = express();
 
       app.use(function(req, res, next){
@@ -41,7 +41,7 @@ describe('req', function(){
       .expect('yes', done);
     })
 
-    it('should return null when there is no acceptable match', function(done){
+    it('should return false when there is no acceptable match', function(done){
       var app = express();
 
       app.use(function(req, res, next){
