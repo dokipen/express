@@ -166,14 +166,14 @@ describe('utils.accepts(type, str)', function(){
       utils.accepts(['text/javascript', 'application/javascript', 'text/xml',
              'application/xml', 'text/html'],
              'text/html,application/xhtml+xml,' +
-             'application/xml;q=0.9,*/*;q=0.8');
+             'application/xml;q=0.9,*/*;q=0.8')
         .should.be.eql('text/html');
     })
     it('should return the best match', function(){
       utils.accepts(['text/javascript', 'application/javascript', 'text/xml',
              'application/xml', 'html'],
              'text/html,application/xhtml+xml,' +
-             'application/xml;q=0.9,*/*;q=0.8');
+             'application/xml;q=0.9,*/*;q=0.8')
         .should.be.eql('html');
     })
   })
